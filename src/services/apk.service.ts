@@ -44,19 +44,39 @@ export const apkService = {
 
       // Extraer la versión desde el atributo value_array
       let version: string | null = null;
-      if (Array.isArray(setting.value_array) && setting.value_array.length > 0) {
-        version = String(setting.value_array[0]).trim();
-      } else if (typeof (setting as any).value_array === 'string' && (setting as any).value_array.trim()) {
-        try {
-          const parsed = JSON.parse((setting as any).value_array);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            version = String(parsed[0]).trim();
-          } else {
-            version = (setting as any).value_array.trim();
-          }
-        } catch {
-          version = (setting as any).value_array.trim();
+
+      const extractVersionString = (val: any): string | null => {
+        if (!val) return null;
+        if (typeof val === 'object') {
+          const raw = val.codigo || val.version || val.version_name || val.tag || Object.values(val)[0];
+          return raw ? String(raw).trim() : null;
         }
+        if (typeof val === 'string') {
+          const trimmed = val.trim();
+          if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+            try {
+              const parsed = JSON.parse(trimmed);
+              if (Array.isArray(parsed)) {
+                return extractVersionString(parsed[0]);
+              }
+              return extractVersionString(parsed);
+            } catch {
+              // fallback
+            }
+          }
+          return trimmed;
+        }
+        return String(val).trim();
+      };
+
+      if (Array.isArray(setting.value_array) && setting.value_array.length > 0) {
+        version = extractVersionString(setting.value_array[0]);
+      } else if (setting.value_array) {
+        version = extractVersionString(setting.value_array);
+      }
+
+      if (version) {
+        version = version.startsWith('v') || version.startsWith('V') ? version : `v${version}`;
       }
 
       return {

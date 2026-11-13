@@ -233,7 +233,7 @@ export const DownloadCard: React.FC = () => {
 
             {downloadInfo?.version && (
               <p className="text-center text-[10px] sm:text-[11px] text-slate-400 font-medium pt-0.5">
-                Versión {downloadInfo.version.replace(/^[vV]/, '')}
+                Versión {downloadInfo.version}
               </p>
             )}
           </div>
