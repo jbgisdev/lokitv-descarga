@@ -17,7 +17,7 @@ export const App: React.FC = () => {
         />
       )}
 
-      {/* Fondo Cinematográfico Original (Oscuro, Nítido y Vibrante) */}
+      {/* Fondo Cinematográfico Responsivo (Vertical para móviles, Horizontal para tablets, PC y TV) */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <picture className="w-full h-full block">
           <source media="(max-width: 767px)" srcSet={mobileBackgroundImage} />
@@ -28,15 +28,15 @@ export const App: React.FC = () => {
           />
         </picture>
 
-        {/* Capa de oscurecimiento sutil para contraste cinemático */}
+        {/* Capa de oscurecimiento muy suave para garantizar contraste de la tarjeta */}
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070A10]/90 via-transparent to-[#070A10]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070A10]/85 via-transparent to-[#070A10]/35" />
       </div>
 
-      {/* Resplandores atmosféricos sutiles */}
-      <div className="fixed top-1/4 -left-28 w-80 h-80 bg-[#38BDF8]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      {/* Background Glows atmosféricos sutiles */}
+      <div className="fixed top-1/4 -left-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#38BDF8]/12 rounded-full blur-3xl pointer-events-none animate-pulse" />
       <div
-        className="fixed bottom-1/4 -right-28 w-80 h-80 bg-[#FB923C]/15 rounded-full blur-3xl pointer-events-none animate-pulse"
+        className="fixed bottom-1/4 -right-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#FB923C]/12 rounded-full blur-3xl pointer-events-none animate-pulse"
         style={{ animationDuration: '5s' }}
       />
 
@@ -47,7 +47,7 @@ export const App: React.FC = () => {
 
       {/* Footer de una sola línea al pie de página */}
       <footer className="relative z-10 text-center text-[11px] text-gray-400 font-medium py-1 select-none">
-        Loki TV &copy; {new Date().getFullYear()} • Entrega Inmediata • 100% Confiable • Sitio Oficial de Descarga
+        Loki TV &copy; {new Date().getFullYear()} • Entrega Inmediata • 100% Confiable • Solo en Android
       </footer>
     </div>
   );
