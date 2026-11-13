@@ -48,18 +48,18 @@
   animation: splashProgress 5s linear forwards;
 }
 
-/* Brillo sutil que se desplaza de izquierda a derecha */
+/* Brillo sutil y pausado que se desplaza de izquierda a derecha lentamente */
 @keyframes shimmer {
   0% {
-    transform: translateX(-150%) skewX(-20deg);
+    transform: translateX(-160%) skewX(-20deg);
   }
-  35%, 100% {
-    transform: translateX(350%) skewX(-20deg);
+  48%, 100% {
+    transform: translateX(360%) skewX(-20deg);
   }
 }
 
 .animate-shimmer {
-  animation: shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: shimmer 6.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
 @keyframes pulse-slow {
