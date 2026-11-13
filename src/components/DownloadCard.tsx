@@ -107,13 +107,10 @@ export const DownloadCard: React.FC = () => {
           </div>
         </div>
 
-        {/* Tarjeta con Theme Light, Volumen y Profundidad 3D (No plana) */}
-        <div className="w-full bg-gradient-to-b from-white/98 via-white/95 to-slate-50/98 backdrop-blur-3xl rounded-3xl p-5 sm:p-6 shadow-[0_30px_70px_-10px_rgba(0,0,0,0.65),0_12px_28px_-6px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,1),inset_0_-1px_2px_rgba(0,0,0,0.06)] border border-white/90 relative transition-all duration-300 ring-1 ring-black/5">
-          {/* Bisel superior iluminado */}
-          <div className="absolute top-0 inset-x-12 h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent rounded-full opacity-80" />
-
+        {/* Tarjeta Principal con Fondo LIGHT 100% Blanco y Contraste Perfecto */}
+        <div className="w-full bg-white rounded-3xl p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] border border-slate-200 relative transition-all duration-300">
           {/* Card Title & Description */}
-          <div className="pb-3.5 mb-4 border-b border-slate-200/80 flex items-center justify-between">
+          <div className="pb-3.5 mb-4 border-b border-slate-100 flex items-center justify-between">
             <div>
               <h2 className="text-base sm:text-lg font-black text-slate-900 tracking-tight flex items-center gap-2">
                 <span>Instalador Loki TV</span>
@@ -121,7 +118,7 @@ export const DownloadCard: React.FC = () => {
                   .APK
                 </span>
               </h2>
-              <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 font-medium">
+              <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5 font-medium">
                 Más de 100 canales en vivo para Android TV, TV Box y smartphones.
               </p>
             </div>
@@ -130,30 +127,30 @@ export const DownloadCard: React.FC = () => {
             </div>
           </div>
 
-          {/* Iconos con Alto Protagonismo y Relieve 3D */}
+          {/* Iconos con Alto Protagonismo y Estilo Limpio */}
           <div className="grid grid-cols-3 gap-2.5 mb-4">
             {/* Entrega Inmediata */}
-            <div className="flex flex-col items-center justify-center p-3 rounded-2xl bg-gradient-to-b from-amber-50/90 to-orange-50/60 border border-amber-200/80 shadow-xs hover:shadow-md transition-all text-center group">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 text-white flex items-center justify-center shadow-md shadow-orange-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
-                <Zap className="w-5 h-5 fill-white text-white" />
+            <div className="flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-2xl bg-amber-50/80 border border-amber-200/80 shadow-xs hover:shadow-md transition-all text-center group">
+              <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 text-white flex items-center justify-center shadow-md shadow-orange-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
+                <Zap className="w-4 h-4 fill-white text-white" />
               </div>
               <span className="text-[11px] font-black text-slate-900 leading-tight">Entrega</span>
               <span className="text-[9px] font-extrabold text-orange-600 uppercase tracking-wide mt-0.5">Inmediata</span>
             </div>
 
             {/* 100% Confiable */}
-            <div className="flex flex-col items-center justify-center p-3 rounded-2xl bg-gradient-to-b from-emerald-50/90 to-teal-50/60 border border-emerald-200/80 shadow-xs hover:shadow-md transition-all text-center group">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
-                <ShieldCheck className="w-5 h-5 text-white" />
+            <div className="flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 shadow-xs hover:shadow-md transition-all text-center group">
+              <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
+                <ShieldCheck className="w-4 h-4 text-white" />
               </div>
               <span className="text-[11px] font-black text-slate-900 leading-tight">100%</span>
               <span className="text-[9px] font-extrabold text-emerald-600 uppercase tracking-wide mt-0.5">Confiable</span>
             </div>
 
             {/* Solo Android TV */}
-            <div className="flex flex-col items-center justify-center p-3 rounded-2xl bg-gradient-to-b from-sky-50/90 to-blue-50/60 border border-sky-200/80 shadow-xs hover:shadow-md transition-all text-center group">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-400 via-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
-                <Tv className="w-5 h-5 text-white" />
+            <div className="flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-2xl bg-sky-50/80 border border-sky-200/80 shadow-xs hover:shadow-md transition-all text-center group">
+              <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-sky-400 via-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/35 mb-1.5 transform group-hover:scale-110 transition-transform">
+                <Tv className="w-4 h-4 text-white" />
               </div>
               <span className="text-[11px] font-black text-slate-900 leading-tight">Solo</span>
               <span className="text-[9px] font-extrabold text-sky-600 uppercase tracking-wide mt-0.5">Android TV</span>
@@ -218,7 +215,7 @@ export const DownloadCard: React.FC = () => {
             <button
               onClick={() => setIsQrModalOpen(true)}
               disabled={!downloadInfo?.downloadUrl}
-              className="w-full py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 disabled:opacity-40 border border-slate-200/90 text-slate-700 hover:text-slate-900 text-xs font-bold flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+              className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-40 border border-slate-200 text-slate-700 hover:text-slate-900 text-xs font-bold flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
             >
               <QrCode className="w-4 h-4 text-[#0284C7]" />
               <span>Escanear Código QR</span>
