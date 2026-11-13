@@ -8,7 +8,7 @@ export const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
 
   return (
-    <div className="h-screen w-full bg-[#070A10] flex flex-col justify-between items-center p-3 sm:p-4 relative overflow-hidden font-sans select-none">
+    <div className="h-screen w-full bg-[#070A10] flex flex-col justify-between items-center px-4 py-3 sm:py-5 relative overflow-hidden font-sans select-none">
       {/* Splash Screen inicial de 5 segundos con animación Zoom Out */}
       {showSplash && (
         <SplashScreen
@@ -30,7 +30,7 @@ export const App: React.FC = () => {
 
         {/* Capa de oscurecimiento muy suave para garantizar contraste de la tarjeta */}
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070A10]/85 via-transparent to-[#070A10]/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070A10]/90 via-transparent to-[#070A10]/40" />
       </div>
 
       {/* Background Glows atmosféricos sutiles */}
@@ -40,13 +40,13 @@ export const App: React.FC = () => {
         style={{ animationDuration: '5s' }}
       />
 
-      {/* Contenedor Principal Centrado (Sin Scroll) */}
-      <main className="relative z-10 w-full flex-1 flex flex-col items-center justify-center min-h-0 my-auto">
+      {/* Contenedor Principal Centrado con margen vertical despegado */}
+      <main className="relative z-10 w-full flex-1 flex flex-col items-center justify-center min-h-0 my-auto py-1">
         <DownloadCard />
       </main>
 
-      {/* Footer de una sola línea al pie de página */}
-      <footer className="relative z-10 text-center text-[11px] text-gray-400 font-medium py-1 select-none">
+      {/* Footer limpio, completamente visible y sin colisiones */}
+      <footer className="relative z-10 text-center text-[11px] sm:text-xs text-gray-400 font-medium pt-2 pb-1 select-none">
         Loki TV &copy; {new Date().getFullYear()} • Entrega Inmediata • 100% Confiable • Solo en Android
       </footer>
     </div>
