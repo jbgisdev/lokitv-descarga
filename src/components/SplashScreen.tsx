@@ -10,17 +10,17 @@ interface SplashScreenProps {
 
 export const SplashScreen: React.FC<SplashScreenProps> = ({
   onFinish,
-  durationMs = 7000,
+  durationMs = 5000,
 }) => {
   const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
 
   useEffect(() => {
-    // Iniciar desvanecimiento suave a los 6.2 segundos para completar a los 7 segundos
+    // Iniciar desvanecimiento suave antes de finalizar
     const fadeTimer = setTimeout(() => {
       setIsFadingOut(true);
-    }, Math.max(durationMs - 800, 1000));
+    }, Math.max(durationMs - 600, 1000));
 
-    // Finalizar y desmontar a los 7 segundos exactos
+    // Finalizar y desmontar a los 5 segundos exactos
     const finishTimer = setTimeout(() => {
       onFinish();
     }, durationMs);
@@ -35,12 +35,12 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
     setIsFadingOut(true);
     setTimeout(() => {
       onFinish();
-    }, 400);
+    }, 350);
   };
 
   return (
     <div
-      className={`fixed inset-0 z-50 overflow-hidden bg-[#070A10] select-none transition-opacity duration-700 flex items-center justify-center p-2 sm:p-4 md:p-6 ${
+      className={`fixed inset-0 z-50 overflow-hidden bg-[#070A10] select-none transition-opacity duration-500 flex items-center justify-center p-2 sm:p-4 md:p-6 ${
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -76,7 +76,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
         <ArrowRight className="w-3.5 h-3.5" />
       </button>
 
-      {/* Barra de progreso inferior de 7 segundos */}
+      {/* Barra de progreso inferior de 5 segundos */}
       <div className="absolute bottom-0 inset-x-0 h-1 bg-white/10 z-30">
         <div className="h-full bg-gradient-to-r from-[#38BDF8] via-sky-400 to-[#FB923C] animate-splash-progress" />
       </div>

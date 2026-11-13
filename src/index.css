@@ -20,7 +20,7 @@
   }
 }
 
-/* Animación de Zoom Out de 7 segundos para el Splash Screen (inicia ligeramente ampliado y encaja al 100%) */
+/* Animación de Zoom Out de 5 segundos para el Splash Screen */
 @keyframes splashZoomOut {
   0% {
     transform: scale(1.18);
@@ -31,10 +31,10 @@
 }
 
 .animate-splash-zoom {
-  animation: splashZoomOut 7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+  animation: splashZoomOut 5s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
 }
 
-/* Barra de progreso de 7 segundos */
+/* Barra de progreso de 5 segundos */
 @keyframes splashProgress {
   0% {
     width: 0%;
@@ -45,16 +45,16 @@
 }
 
 .animate-splash-progress {
-  animation: splashProgress 7s linear forwards;
+  animation: splashProgress 5s linear forwards;
 }
 
 @keyframes pulse-slow {
   0%, 100% {
-    opacity: 0.2;
+    opacity: 0.25;
     transform: scale(1);
   }
   50% {
-    opacity: 0.35;
+    opacity: 0.45;
     transform: scale(1.05);
   }
 }

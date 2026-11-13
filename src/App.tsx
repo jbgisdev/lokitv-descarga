@@ -9,10 +9,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="h-screen w-full bg-[#070A10] flex flex-col justify-between items-center p-3 sm:p-4 relative overflow-hidden font-sans select-none">
-      {/* Splash Screen inicial de 7 segundos con animación Zoom Out */}
+      {/* Splash Screen inicial de 5 segundos con animación Zoom Out */}
       {showSplash && (
         <SplashScreen
-          durationMs={7000}
+          durationMs={5000}
           onFinish={() => setShowSplash(false)}
         />
       )}
@@ -34,9 +34,9 @@ export const App: React.FC = () => {
       </div>
 
       {/* Background Glows atmosféricos sutiles */}
-      <div className="fixed top-1/4 -left-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#38BDF8]/12 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="fixed top-1/4 -left-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#38BDF8]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
       <div
-        className="fixed bottom-1/4 -right-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#FB923C]/12 rounded-full blur-3xl pointer-events-none animate-pulse"
+        className="fixed bottom-1/4 -right-28 w-72 sm:w-80 h-72 sm:h-80 bg-[#FB923C]/15 rounded-full blur-3xl pointer-events-none animate-pulse"
         style={{ animationDuration: '5s' }}
       />
 
