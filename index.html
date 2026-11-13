@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loki TV - Descargar APK Oficial para Android</title>
+  <meta name="description"
+    content="Descarga la última versión de Loki TV APK para celulares, tablets y Android TV. Disfruta de más de 100 canales en vivo, deportes y entretenimiento en alta calidad." />
+
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Loki TV" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Loki TV - Descargar APK Oficial para Android" />
+  <meta property="og:description"
+    content="Descarga directa de la última versión oficial de Loki TV APK. Más de 100 canales en vivo, deportes y entretenimiento para Android y Smart TV." />
+  <meta property="og:image" content="/background.webp" />
+  <meta property="og:image:secure_url" content="/background.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:alt" content="Loki TV - Descarga APK Oficial" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Loki TV - Descargar APK Oficial para Android" />
+  <meta name="twitter:description"
+    content="Descarga directa de la última versión oficial de Loki TV APK. Más de 100 canales en vivo, deportes y entretenimiento." />
+  <meta name="twitter:image" content="/background.webp" />
+  <meta name="twitter:image:alt" content="Loki TV - Descarga APK Oficial" />
+
+  <!-- Script para resolución de URLs absolutas en Open Graph según el dominio actual -->
+  <script>
+    (function () {
+      try {
+        var origin = window.location.origin;
+        if (!origin) return;
+
+        var ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute('content', origin + '/background.webp');
+
+        var ogSecureImage = document.querySelector('meta[property="og:image:secure_url"]');
+        if (ogSecureImage) ogSecureImage.setAttribute('content', origin + '/background.webp');
+
+        var twImage = document.querySelector('meta[name="twitter:image"]');
+        if (twImage) twImage.setAttribute('content', origin + '/background.webp');
+
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (!ogUrl) {
+          var metaUrl = document.createElement('meta');
+          metaUrl.setAttribute('property', 'og:url');
+          metaUrl.setAttribute('content', window.location.href);
+          document.head.appendChild(metaUrl);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body
+  class="bg-[#070A10] text-slate-100 h-full w-full font-sans antialiased selection:bg-[#38BDF8] selection:text-gray-950 overflow-hidden">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
