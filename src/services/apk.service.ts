@@ -5,6 +5,7 @@ export interface ApkDownloadInfo {
   downloadUrl: string;
   description?: string | null;
   updatedAt?: string | null;
+  version?: string | null;
 }
 
 export const apkService = {
@@ -41,11 +42,29 @@ export const apkService = {
         };
       }
 
+      // Extraer la versión desde el atributo value_array
+      let version: string | null = null;
+      if (Array.isArray(setting.value_array) && setting.value_array.length > 0) {
+        version = String(setting.value_array[0]).trim();
+      } else if (typeof (setting as any).value_array === 'string' && (setting as any).value_array.trim()) {
+        try {
+          const parsed = JSON.parse((setting as any).value_array);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            version = String(parsed[0]).trim();
+          } else {
+            version = (setting as any).value_array.trim();
+          }
+        } catch {
+          version = (setting as any).value_array.trim();
+        }
+      }
+
       return {
         data: {
           downloadUrl,
           description: setting.description,
           updatedAt: setting.updated_at,
+          version: version || null,
         },
         error: null,
       };

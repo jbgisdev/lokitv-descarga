@@ -178,8 +178,8 @@ export const DownloadCard: React.FC = () => {
               onClick={handleDownload}
               disabled={isLoading || !downloadInfo?.downloadUrl || isTriggeringDownload}
               className={`w-full py-2.5 sm:py-3 px-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 group select-none relative overflow-hidden focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-400 ${isLoading || !downloadInfo?.downloadUrl
-                  ? 'bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed opacity-75'
-                  : 'bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-400 hover:to-blue-700 text-white shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/35 cursor-pointer active:scale-[0.98]'
+                ? 'bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed opacity-75'
+                : 'bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-400 hover:to-blue-700 text-white shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/35 cursor-pointer active:scale-[0.98]'
                 }`}
             >
               {!isLoading && downloadInfo?.downloadUrl && !isTriggeringDownload && (
@@ -230,6 +230,12 @@ export const DownloadCard: React.FC = () => {
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0 stroke-[2]" />
               <span>Archivo APK certificado, seguro y libre de malware.</span>
             </p>
+
+            {downloadInfo?.version && (
+              <p className="text-center text-[10px] sm:text-[11px] text-slate-400 font-medium pt-0.5">
+                Versión {downloadInfo.version.replace(/^[vV]/, '')}
+              </p>
+            )}
           </div>
 
           {/* Compatibility Badges */}
@@ -239,7 +245,7 @@ export const DownloadCard: React.FC = () => {
             </span>
             <span className="text-slate-300">•</span>
             <span className="flex items-center gap-1">
-              <Check className="w-3 h-3 text-emerald-500 stroke-[2.5]" /> Fire Stick
+              <Check className="w-3 h-3 text-emerald-500 stroke-[2.5]" /> Smartphone
             </span>
             <span className="text-slate-300">•</span>
             <span className="flex items-center gap-1">
