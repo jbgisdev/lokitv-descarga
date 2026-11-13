@@ -232,9 +232,15 @@ export const DownloadCard: React.FC = () => {
             </p>
 
             {downloadInfo?.version && (
-              <p className="text-center text-[10px] sm:text-[11px] text-slate-400 font-medium pt-0.5">
-                Versión {downloadInfo.version}
-              </p>
+              <div className="flex items-center justify-center pt-0.5">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100/80 border border-slate-200/80 text-[10px] sm:text-[11px] font-medium text-slate-600 shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                  <span>Versión</span>
+                  <span className="font-semibold text-slate-800 font-mono tracking-tight">
+                    {downloadInfo.version}
+                  </span>
+                </span>
+              </div>
             )}
           </div>
 
