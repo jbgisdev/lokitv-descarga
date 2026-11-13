@@ -179,36 +179,45 @@ export const DownloadCard: React.FC = () => {
             <button
               onClick={handleDownload}
               disabled={isLoading || !downloadInfo?.downloadUrl || isTriggeringDownload}
-              className={`w-full py-3 sm:py-3.5 px-4 rounded-xl text-sm sm:text-base font-black tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group select-none focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-400 ${
+              className={`w-full py-3 sm:py-3.5 px-4 rounded-xl text-sm sm:text-base font-black tracking-wide transition-all duration-200 flex items-center justify-center gap-2 group select-none relative overflow-hidden focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-400 ${
                 isLoading || !downloadInfo?.downloadUrl
                   ? 'bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed opacity-75'
                   : 'bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-400 hover:to-blue-700 text-white shadow-[0_10px_24px_-4px_rgba(2,132,199,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:shadow-[0_14px_28px_-4px_rgba(2,132,199,0.6)] cursor-pointer active:scale-[0.98]'
               }`}
             >
-              {isLoading ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-sky-600 border-t-transparent rounded-full animate-spin" />
-                  <span>Obteniendo enlace...</span>
-                </>
-              ) : isTriggeringDownload ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  <span>Iniciando descarga directa...</span>
-                </>
-              ) : !downloadInfo?.downloadUrl ? (
-                <>
-                  <AlertCircle className="w-4 h-4" />
-                  <span>Descarga no disponible</span>
-                </>
-              ) : (
-                <>
-                  <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform shrink-0" />
-                  <span className="tracking-wide">Descargar APK</span>
-                  <span className="text-[9px] uppercase px-1.5 py-0.5 rounded-md bg-black/20 text-white font-black tracking-wider">
-                    Android
-                  </span>
-                </>
+              {/* Efecto de brillo sutil que recorre de izquierda a derecha */}
+              {!isLoading && downloadInfo?.downloadUrl && !isTriggeringDownload && (
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  <div className="w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-shimmer" />
+                </div>
               )}
+
+              <div className="relative z-10 flex items-center justify-center gap-2">
+                {isLoading ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-sky-600 border-t-transparent rounded-full animate-spin" />
+                    <span>Obteniendo enlace...</span>
+                  </>
+                ) : isTriggeringDownload ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Iniciando descarga directa...</span>
+                  </>
+                ) : !downloadInfo?.downloadUrl ? (
+                  <>
+                    <AlertCircle className="w-4 h-4" />
+                    <span>Descarga no disponible</span>
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform shrink-0" />
+                    <span className="tracking-wide">Descargar APK</span>
+                    <span className="text-[9px] uppercase px-1.5 py-0.5 rounded-md bg-black/20 text-white font-black tracking-wider">
+                      Android
+                    </span>
+                  </>
+                )}
+              </div>
             </button>
 
             {/* Botón para Escanear QR */}
