@@ -8,7 +8,7 @@ export const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
 
   return (
-    <div className="h-screen w-full bg-[#070A10] flex flex-col justify-between items-center px-4 py-3 sm:py-5 relative overflow-hidden font-sans select-none">
+    <div className="h-screen w-full bg-[#070A10] flex flex-col justify-between items-center px-4 pt-3 sm:pt-5 pb-2 sm:pb-3 relative overflow-hidden font-sans select-none">
       {/* Splash Screen inicial de 5 segundos con animación Zoom Out */}
       {showSplash && (
         <SplashScreen
@@ -41,12 +41,12 @@ export const App: React.FC = () => {
       />
 
       {/* Contenedor Principal Centrado con margen vertical despegado */}
-      <main className="relative z-10 w-full flex-1 flex flex-col items-center justify-center min-h-0 my-auto py-1">
+      <main className="relative z-10 w-full flex-1 flex flex-col items-center justify-center min-h-0 py-1">
         <DownloadCard />
       </main>
 
       {/* Footer limpio, completamente visible y sin colisiones */}
-      <footer className="relative z-10 text-center text-[11px] sm:text-xs text-gray-400 font-medium pt-2 pb-1 select-none">
+      <footer className="relative z-10 text-center text-[11px] sm:text-xs text-gray-400 font-medium pt-2 pb-1 select-none shrink-0">
         Loki TV &copy; {new Date().getFullYear()} • Entrega Inmediata • 100% Confiable • Solo en Android
       </footer>
     </div>
